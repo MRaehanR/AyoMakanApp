@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cv_resto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:backgroundTint="#f2f5b8">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp">
+        
+        <ImageView
+            android:id="@+id/list_poster"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_margin="10dp"
+            />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/list_namaResto_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nama Restoran"
+                android:textSize="14dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Deskripsi"
+                android:textSize="12dp"
+                android:layout_below="@+id/list_namaResto_txt"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+    
+    
+</com.google.android.material.card.MaterialCardView>
