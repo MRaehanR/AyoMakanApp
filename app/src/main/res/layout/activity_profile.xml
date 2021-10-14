@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.Profile"
+    android:background="#eb3b5a">
+    
+    <LinearLayout
+        android:id="@+id/profile_layout_1"
+        android:layout_width="match_parent"
+        android:layout_height="370dp"
+        android:background="#f7b731">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/profile_username_logo"
+                android:layout_width="150dp"
+                android:layout_height="153dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/ic_launcher_background"
+                android:layout_marginTop="50dp"
+                />
+            <TextView
+                android:id="@+id/profile_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Username"
+                android:textSize="18dp"
+                android:textColor="@color/white"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/profile_username_logo"
+                android:layout_marginTop="50dp"
+
+                />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/profile_editProfile_btn"
+        android:layout_width="217dp"
+        android:layout_height="51dp"
+        android:backgroundTint="#f7b731"
+        android:text="Edit Profile"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/profile_layout_1"
+        android:layout_marginTop="100dp"
+        />
+    <Button
+        android:id="@+id/profile_favoriteResto_btn"
+        android:layout_width="217dp"
+        android:layout_height="51dp"
+        android:backgroundTint="#fed330"
+        android:text="Fvorite Resto"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/profile_editProfile_btn"
+        android:layout_marginTop="20dp"
+        />
+
+</RelativeLayout>
