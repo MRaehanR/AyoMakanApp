@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import com.example.ayomakan.R;
 
-public class Detail extends AppCompatActivity {
+public class DetailActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
