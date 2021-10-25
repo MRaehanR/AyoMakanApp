@@ -30,6 +30,8 @@ public class DashboardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
+        getSupportActionBar().hide();
+
         recyclerView = findViewById(R.id.dashboard_rv);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

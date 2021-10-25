@@ -44,7 +44,14 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
                 .load(restaurantModels.get(position).getPictureId())
                 .into(holder.ivPicture);
         holder.cvRestaurant.setOnClickListener(v -> {
-            context.startActivity(new Intent(context, DetailActivity.class));
+            Intent intent = new Intent(context, DetailActivity.class);
+            intent.putExtra("id", restaurantModels.get(position).getId());
+            intent.putExtra("description", restaurantModels.get(position).getDescription());
+            intent.putExtra("name", restaurantModels.get(position).getName());
+            intent.putExtra("city", restaurantModels.get(position).getCity());
+            intent.putExtra("rating", restaurantModels.get(position).getRating());
+            intent.putExtra("pictureId", restaurantModels.get(position).getPictureId());
+            context.startActivity(intent);
         });
     }
 
