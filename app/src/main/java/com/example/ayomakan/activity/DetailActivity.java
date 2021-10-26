@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.ayomakan.R;
 
 public class DetailActivity extends AppCompatActivity {
@@ -27,6 +28,7 @@ public class DetailActivity extends AppCompatActivity {
         tvDescription = findViewById(R.id.detail_deskripsi_txt);
         tvAlamat = findViewById(R.id.detail_alamat_txt);
         tvRating = findViewById(R.id.detail_rating_txt);
+        ivPicture = findViewById(R.id.detail_detailImage);
 
         bundle = getIntent().getExtras();
         if (bundle != null){
@@ -42,6 +44,9 @@ public class DetailActivity extends AppCompatActivity {
         tvDescription.setText(description);
         tvAlamat.setText(city);
         tvRating.setText(rating.toString());
+        Glide.with(getApplicationContext())
+                .load(pictureId)
+                .into(ivPicture);
 
     }
 }
