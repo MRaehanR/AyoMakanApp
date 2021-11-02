@@ -7,16 +7,17 @@
     tools:context=".activity.SplashScreenActivity"
     android:background="#FC5C65">
 
-    <TextView
-        android:id="@+id/splash_ayoMakan_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="80dp"
-        android:fontFamily="@font/caveat_bold"
-        android:text="Ayo Makan"
-        android:textColor="@color/white"
-        android:textSize="48dp" />
+   <TextView
+       android:id="@+id/splash_ayoMakan_txt"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="Ayo Makan"
+       android:textSize="36dp"
+       android:fontFamily="@font/caveat_bold"
+       android:textColor="@color/white"
+       android:layout_centerHorizontal="true"
+       android:layout_marginTop="80dp"
+       />
 
     <ImageView
         android:id="@+id/splash_image"
@@ -32,7 +33,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Laper ? Makan Lah"
-        android:textSize="18dp"
+        android:textSize="24dp"
+        android:fontFamily="@font/caveat_medium"
         android:textColor="@color/white"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/splash_image"

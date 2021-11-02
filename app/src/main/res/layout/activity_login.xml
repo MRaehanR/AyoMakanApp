@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.LoginActivity"
-    android:background="#EB3B5A">
+    tools:context=".activity.LoginActivity">
 
     <ImageView
         android:id="@+id/login_logo"
@@ -21,22 +20,23 @@
         android:layout_height="wrap_content"
         android:text="Selamat datang"
         android:textSize="12dp"
-        android:textColor="@color/white"
+        android:textColor="#cfd8dc"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/login_logo"
         android:layout_marginTop="20dp"
         />
+
     <TextView
         android:id="@+id/login_ayoMakan_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ayo Makan"
-        android:textSize="34dp"
-        android:textColor="@color/white"
-        android:layout_centerHorizontal="true"
         android:layout_below="@+id/login_selamatDatang_txt"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
-        />
+        android:text="Ayo Makan"
+        android:textColor="#cfd8dc"
+        android:textSize="34dp"
+        android:fontFamily="@font/caveat_bold"/>
 
     <TextView
         android:id="@+id/login_perintahLogin_txt"
@@ -46,7 +46,7 @@
         android:layout_marginLeft="66dp"
         android:layout_marginTop="80dp"
         android:text="Silahkan login terlebih dahulu !"
-        android:textColor="@color/white"
+        android:textColor="#cfd8dc"
         android:textSize="12dp" />
 
     <EditText
@@ -54,7 +54,7 @@
         android:layout_width="279dp"
         android:layout_height="35dp"
         android:layout_below="@+id/login_perintahLogin_txt"
-        android:background="@color/white"
+        android:background="#cfd8dc"
         android:hint="Email"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
@@ -64,7 +64,7 @@
         android:layout_width="279dp"
         android:layout_height="35dp"
         android:layout_below="@+id/login_email_EditText"
-        android:background="@color/white"
+        android:background="#cfd8dc"
         android:hint="Password"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
@@ -80,23 +80,24 @@
         android:layout_marginTop="30dp"
         android:backgroundTint="#fed330"
         android:text="Masuk" />
+
     <TextView
         android:id="@+id/login_opsiMasuk_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/login_masuk_btn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
         android:text="Masuk dengan"
         android:textSize="12dp"
-        android:textColor="@color/white"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/login_masuk_btn"
-        android:layout_marginTop="70dp"
-        />
+        android:textStyle="bold"/>
 
         <ImageButton
             android:id="@+id/login_google_btn"
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:src="@drawable/login_google_logo"
+            android:backgroundTint="@color/white"
             android:layout_centerHorizontal="true"
             android:layout_below="@+id/login_opsiMasuk_txt"
             android:layout_marginTop="30dp"
@@ -106,6 +107,7 @@
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:src="@drawable/login_facebook_logo"
+        android:backgroundTint="@color/white"
         android:layout_below="@+id/login_opsiMasuk_txt"
         android:layout_toEndOf="@+id/login_google_btn"
         android:layout_marginTop="30dp"
@@ -115,6 +117,7 @@
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:src="@drawable/login_twitter_logo"
+        android:backgroundTint="@color/white"
         android:layout_below="@+id/login_opsiMasuk_txt"
         android:layout_marginTop="30dp"
         android:layout_toLeftOf="@+id/login_google_btn"
