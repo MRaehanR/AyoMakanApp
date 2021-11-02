@@ -1,6 +1,8 @@
 package com.example.ayomakan.model;
 
-public class RestaurantModel {
+import io.realm.RealmObject;
+
+public class RestaurantModel extends RealmObject {
 
     private String id;
     private String name;
@@ -8,6 +10,18 @@ public class RestaurantModel {
     private String pictureId;
     private String city;
     private double rating;
+
+
+    public RestaurantModel(){}
+
+    public RestaurantModel(String id, String name, String description, String pictureId, String city, double rating) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.pictureId = pictureId;
+        this.city = city;
+        this.rating = rating;
+    }
 
     public String getId() {
         return id;
@@ -54,15 +68,6 @@ public class RestaurantModel {
     }
 
     public void setRating(double rating) {
-        this.rating = rating;
-    }
-
-    public RestaurantModel(String id, String name, String description, String pictureId, String city, double rating) {
-        this.id = id;
-        this.name = name;
-        this.description = description;
-        this.pictureId = pictureId;
-        this.city = city;
         this.rating = rating;
     }
 
