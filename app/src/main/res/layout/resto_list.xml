@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
-    android:backgroundTint="#f2f5b8">
+    android:outlineSpotShadowColor="@color/black"
+    android:outlineAmbientShadowColor="@color/black">
 
     <LinearLayout
         android:layout_width="match_parent"
