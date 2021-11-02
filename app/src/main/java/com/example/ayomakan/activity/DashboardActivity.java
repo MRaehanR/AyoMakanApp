@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 
 import com.androidnetworking.AndroidNetworking;
@@ -24,6 +25,7 @@ public class DashboardActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     RestaurantAdapter adapter;
     ArrayList<RestaurantModel> restaurantlist;
+    ProgressDialog pd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,8 @@ public class DashboardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_dashboard);
 
         getSupportActionBar().hide();
+
+        pd = new ProgressDialog(DashboardActivity.this);
 
         recyclerView = findViewById(R.id.dashboard_rv);
 
@@ -46,6 +50,8 @@ public class DashboardActivity extends AppCompatActivity {
     }
 
     private void getData() {
+        pd.setMessage("loading");
+        pd.show();
         AndroidNetworking.get("https://restaurant-api.dicoding.dev/list")
                 .build()
                 .getAsJSONObject(new JSONObjectRequestListener() {
@@ -69,6 +75,7 @@ public class DashboardActivity extends AppCompatActivity {
                             e.printStackTrace();
                         }
                         adapter.notifyDataSetChanged();
+                        pd.dismiss();
                     }
 
                     @Override
