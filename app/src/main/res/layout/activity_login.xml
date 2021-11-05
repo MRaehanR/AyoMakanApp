@@ -19,7 +19,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Selamat datang"
-        android:textSize="12dp"
+        android:textSize="18dp"
         android:textColor="#8C8C8C"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/login_logo"
@@ -35,7 +35,7 @@
         android:layout_marginTop="10dp"
         android:text="Ayo Makan"
         android:textColor="#8C8C8C"
-        android:textSize="34dp"
+        android:textSize="40dp"
         android:fontFamily="@font/caveat_bold"/>
 
     <TextView
@@ -43,41 +43,58 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/login_ayoMakan_txt"
-        android:layout_marginLeft="66dp"
-        android:layout_marginTop="80dp"
+        android:layout_centerHorizontal="true"
+        android:paddingRight="76dp"
+        android:layout_marginTop="50dp"
         android:text="Silahkan login terlebih dahulu !"
         android:textColor="#8C8C8C"
-        android:textSize="12dp" />
+        android:textSize="15dp" />
 
-    <EditText
-        android:id="@+id/login_email_EditText"
-        android:layout_width="279dp"
-        android:layout_height="35dp"
-        android:layout_below="@+id/login_perintahLogin_txt"
-        android:background="#cfd8dc"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/login_email_Layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:hint="Email"
-        android:textColorHint="#576DA0"
+        android:layout_below="@+id/login_perintahLogin_txt"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        />
-    <EditText
-        android:id="@+id/login_password_EditText"
-        android:layout_width="279dp"
-        android:layout_height="35dp"
-        android:layout_below="@+id/login_email_EditText"
-        android:background="#cfd8dc"
+        app:startIconDrawable="@drawable/dashboard_search_icon"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/login_email_editText"
+            android:layout_width="279dp"
+            android:layout_height="wrap_content"
+
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/login_password_Layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:hint="Password"
-        android:textColorHint="#576DA0"
+        android:layout_below="@+id/login_email_Layout"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        />
+        android:layout_marginTop="20dp"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/login_password_EditText"
+            android:layout_width="279dp"
+            android:layout_height="wrap_content"
+
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/login_masuk_btn"
         android:layout_width="193dp"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
 
-        android:layout_below="@+id/login_password_EditText"
+        android:layout_below="@+id/login_password_Layout"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:backgroundTint="#fed330"
@@ -89,15 +106,15 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/login_masuk_btn"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="60dp"
         android:text="Masuk dengan"
-        android:textSize="12dp"
+        android:textSize="17dp"
         android:textStyle="bold"/>
 
         <ImageButton
             android:id="@+id/login_google_btn"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:src="@drawable/login_google_logo"
             android:backgroundTint="@color/white"
             android:layout_centerHorizontal="true"
@@ -106,8 +123,8 @@
             />
     <ImageButton
         android:id="@+id/login_facebook_btn"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:src="@drawable/login_facebook_logo"
         android:backgroundTint="@color/white"
         android:layout_below="@+id/login_opsiMasuk_txt"
@@ -116,8 +133,8 @@
         android:layout_marginLeft="10dp"
         />
     <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="35dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:src="@drawable/login_twitter_logo"
         android:backgroundTint="@color/white"
         android:layout_below="@+id/login_opsiMasuk_txt"

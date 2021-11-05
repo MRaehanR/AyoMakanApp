@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.DetailActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <LinearLayout
         android:id="@+id/detail_layout1"
@@ -19,13 +22,23 @@
                 android:id="@+id/detail_detailRestoran_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Detail Restoran"
-                android:textSize="18dp"
-                android:textStyle="bold"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="40dp"
-                />
+                android:text="Detail Restoran"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/detail_detailRestoran_txt"
+                android:layout_marginTop="40dp"
+                android:layout_marginRight="60dp"
+                android:src="@drawable/detail_back_btn"
+                android:backgroundTint="#00FFFFFF"
+
+                />
 
         </RelativeLayout>
     </LinearLayout>
@@ -84,19 +97,20 @@
         android:layout_marginTop="30dp"
         android:layout_marginLeft="130dp"
         />
-    <TextView
-        android:id="@+id/detail_rating_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Rating"
-        android:textSize="14dp"
-        android:textStyle="bold"
-        android:layout_below="@+id/detail_ratingJudul_txt"
-        android:layout_marginTop="10dp"
-        android:layout_toRightOf="@+id/detail_alamatJudul_txt"
-        android:layout_marginLeft="127dp"
 
-        />
+        <TextView
+            android:id="@+id/detail_rating_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/detail_ratingJudul_txt"
+            android:layout_marginLeft="127dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/detail_alamatJudul_txt"
+            android:text="Rating"
+            android:textSize="14dp"
+            android:textStyle="bold"
+
+            />
 
     <ImageButton
         android:id="@+id/detail_fav_btn"
@@ -120,26 +134,22 @@
         android:paddingLeft="70dp"
         />
 
-    <androidx.core.widget.NestedScrollView
+    <TextView
+        android:id="@+id/detail_deskripsi_txt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/detail_deskripsiJudul_txt"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="70dp"
+        android:text="Deskripsi"
+        android:textColor="#aeb5b0"
+        android:textSize="14dp" />
 
-        >
-        <TextView
-            android:id="@+id/detail_deskripsi_txt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/detail_deskripsiJudul_txt"
-            android:layout_marginTop="20dp"
-            android:paddingLeft="70dp"
-            android:text="Deskripsi"
-            android:textColor="#aeb5b0"
-            android:textSize="14dp" />
 
-    </androidx.core.widget.NestedScrollView>
+
+    </RelativeLayout>
 
 
 
 
-</RelativeLayout>
+</androidx.core.widget.NestedScrollView>

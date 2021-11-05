@@ -14,11 +14,13 @@
         
         <ImageView
             android:id="@+id/list_poster"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
             android:layout_margin="10dp"
+            android:scaleType="centerCrop"
             />
-        <RelativeLayout
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -26,11 +28,36 @@
                 android:id="@+id/list_namaResto_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
                 android:text="Nama Restoran"
                 android:textSize="14dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="20dp"
-                />
+                android:textStyle="bold"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <ImageView
+                    android:id="@+id/list_Rating_image"
+                    android:src="@drawable/ic_baseline_star_24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"/>
+
+                <TextView
+                    android:id="@+id/list_rating_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="Rating"
+                    android:textSize="14dp"/>
+
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/list_deskripsi_txt"
@@ -39,10 +66,10 @@
                 android:text="Deskripsi"
                 android:textSize="12dp"
                 android:layout_below="@+id/list_namaResto_txt"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
                 />
-        </RelativeLayout>
+        </LinearLayout>
 
 
     </LinearLayout>
