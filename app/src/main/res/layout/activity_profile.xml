@@ -1,65 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.Profile"
     >
-    
-    <LinearLayout
-        android:id="@+id/profile_layout_1"
+    <FrameLayout
+        android:id="@+id/profile_fl_container"
         android:layout_width="match_parent"
-        android:layout_height="370dp"
-        android:background="#eb3b5a">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        android:layout_height="0dp"
+        android:background="#eb3b5a"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/profile_username_logo"
-                android:layout_width="150dp"
-                android:layout_height="153dp"
-                android:layout_centerHorizontal="true"
-                android:src="@drawable/ic_launcher_background"
-                android:layout_marginTop="50dp"
-                />
-            <TextView
-                android:id="@+id/profile_username"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Username"
-                android:textSize="18dp"
-                android:textColor="@color/white"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@+id/profile_username_logo"
-                android:layout_marginTop="50dp"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_menu"
+        app:itemIconTint="@drawable/item_selected"
+        app:itemTextColor="@drawable/item_selected"
+        android:backgroundTint="@color/red"/>
 
-                />
-        </RelativeLayout>
-    </LinearLayout>
 
-    <Button
-        android:id="@+id/profile_editProfile_btn"
-        android:layout_width="217dp"
-        android:layout_height="51dp"
-        android:backgroundTint="#f7b731"
-        android:text="Edit Profile"
-        android:textColor="@color/black"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/profile_layout_1"
-        android:layout_marginTop="100dp"
-        />
-    <Button
-        android:id="@+id/profile_favoriteResto_btn"
-        android:layout_width="217dp"
-        android:layout_height="51dp"
-        android:backgroundTint="#fed330"
-        android:text="Fvorite Resto"
-        android:textColor="@color/black"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/profile_editProfile_btn"
-        android:layout_marginTop="20dp"
-        />
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,13 +13,14 @@ import android.widget.Toast;
 import com.example.ayomakan.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
-    EditText et_email, et_password;
+    EditText  et_password,et_email;
     Button btn_submit;
 
     @Override
@@ -30,15 +31,14 @@ public class LoginActivity extends AppCompatActivity {
         getSupportActionBar().hide();
 
         mAuth = FirebaseAuth.getInstance();
-
-        et_email = findViewById(R.id.login_email_EditText);
+        et_email = findViewById(R.id.login_email_editText);
         et_password = findViewById(R.id.login_password_EditText);
         btn_submit = findViewById(R.id.login_masuk_btn);
 
         btn_submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email = et_email.getText().toString().trim();
+                String email = et_email.getEditableText().toString().trim();
                 String password = et_password.getText().toString().trim();
 
                 if(email.isEmpty() || password.isEmpty()){
