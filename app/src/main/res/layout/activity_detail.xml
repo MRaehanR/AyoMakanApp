@@ -9,39 +9,41 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <LinearLayout
-        android:id="@+id/detail_layout1"
-        android:layout_width="match_parent"
-        android:layout_height="320dp"
-        android:background="#f7b731">
-        <RelativeLayout
+        <LinearLayout
+            android:id="@+id/detail_layout1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="320dp"
+            android:background="@drawable/detail_shape">
 
-            <TextView
-                android:id="@+id/detail_detailRestoran_txt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="40dp"
-                android:text="Detail Restoran"
-                android:textColor="@color/white"
-                android:textSize="20dp"
-                android:textStyle="bold" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toLeftOf="@+id/detail_detailRestoran_txt"
-                android:layout_marginTop="40dp"
-                android:layout_marginRight="60dp"
-                android:src="@drawable/detail_back_btn"
-                android:backgroundTint="#00FFFFFF"
+                <TextView
+                    android:id="@+id/detail_detailRestoran_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="40dp"
+                    android:text="Detail Restoran"
+                    android:textColor="@color/white"
+                    android:textSize="24dp"
+                    android:textStyle="bold" />
 
-                />
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginRight="60dp"
+                    android:layout_toLeftOf="@+id/detail_detailRestoran_txt"
+                    android:backgroundTint="#00FFFFFF"
+                    android:src="@drawable/detail_back_btn"
 
-        </RelativeLayout>
-    </LinearLayout>
+                    />
+
+            </RelativeLayout>
+        </LinearLayout>
+
 
     <ImageView
         android:id="@+id/detail_detailImage"
@@ -52,17 +54,16 @@
         android:layout_marginTop="180dp"
         />
 
-    <TextView
-        android:id="@+id/detail_namaRestoran_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nama Restoran"
-        android:textSize="18dp"
-        android:textStyle="bold"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/detail_detailImage"
-        android:layout_marginTop="60dp"
-        />
+        <TextView
+            android:id="@+id/detail_namaRestoran_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/detail_detailImage"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:text="Nama Restoran"
+            android:textSize="18dp"
+            android:textStyle="bold" />
     <TextView
         android:id="@+id/detail_alamatJudul_txt"
         android:layout_width="wrap_content"
@@ -85,18 +86,18 @@
         android:layout_marginLeft="60dp"
         android:layout_marginTop="10dp"
         />
-    <TextView
-        android:id="@+id/detail_ratingJudul_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Rating"
-        android:textSize="12dp"
-        android:textColor="#aeb5b0"
-        android:layout_below="@+id/detail_namaRestoran_txt"
-        android:layout_toRightOf="@+id/detail_alamatJudul_txt"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="130dp"
-        />
+
+        <TextView
+            android:id="@+id/detail_ratingJudul_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/detail_namaRestoran_txt"
+            android:layout_marginLeft="130dp"
+            android:layout_marginTop="30dp"
+            android:layout_toRightOf="@+id/detail_alamatJudul_txt"
+            android:text="Rating"
+            android:textColor="#aeb5b0"
+            android:textSize="12dp" />
 
         <TextView
             android:id="@+id/detail_rating_txt"
@@ -112,16 +113,16 @@
 
             />
 
-    <ImageButton
-        android:id="@+id/detail_fav_btn"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:src="@drawable/detail_fav_logo"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/detail_namaRestoran_txt"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="60dp"
-        />
+        <ImageButton
+            android:id="@+id/detail_fav_btn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/detail_namaRestoran_txt"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="50dp"
+            android:background="@color/white"
+            android:src="@drawable/detail_fav_logo" />
     <TextView
         android:id="@+id/detail_deskripsiJudul_txt"
         android:layout_width="match_parent"
@@ -144,6 +145,20 @@
         android:text="Deskripsi"
         android:textColor="#aeb5b0"
         android:textSize="14dp" />
+
+        <Button
+            android:id="@+id/detail_tulis_komentar_btn"
+            android:layout_width="370dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/detail_deskripsi_txt"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="@color/white"
+            android:hint="Tulis Komentar"
+            android:outlineAmbientShadowColor="@color/black"
+            android:outlineSpotShadowColor="@color/black"
+            android:shadowColor="@color/black" />
 
 
 
