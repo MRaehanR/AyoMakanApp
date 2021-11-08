@@ -55,10 +55,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="Email"
+        app:hintTextColor="#576DA0"
         android:layout_below="@+id/login_perintahLogin_txt"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        app:startIconDrawable="@drawable/dashboard_search_icon"
         >
 
         <com.google.android.material.textfield.TextInputEditText
@@ -75,6 +75,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="Password"
+        app:hintTextColor="#576DA0"
         android:layout_below="@+id/login_email_Layout"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
@@ -111,16 +112,15 @@
         android:textSize="17dp"
         android:textStyle="bold"/>
 
-        <ImageButton
-            android:id="@+id/login_google_btn"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/login_google_logo"
-            android:backgroundTint="@color/white"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@+id/login_opsiMasuk_txt"
-            android:layout_marginTop="30dp"
-            />
+    <ImageButton
+        android:id="@+id/login_google_btn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/login_opsiMasuk_txt"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/white"
+        android:src="@drawable/login_google_logo" />
     <ImageButton
         android:id="@+id/login_facebook_btn"
         android:layout_width="50dp"
