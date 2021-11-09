@@ -31,7 +31,7 @@ public class RealmHelper {
         });
     }
 
-    public List<RestaurantModel> getAllMovies() {
+    public List<RestaurantModel> getAllRestaurant() {
         RealmResults<RestaurantModel> results = realm.where(RestaurantModel.class).findAll();
         return results;
     }

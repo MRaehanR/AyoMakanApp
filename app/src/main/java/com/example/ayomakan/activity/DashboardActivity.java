@@ -30,6 +30,7 @@ public class DashboardActivity extends AppCompatActivity implements BottomNaviga
 
     BottomNavigationView bottomNavigationView;
     Boolean isFromFavorite = false;
+//    Bundle bundle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +42,11 @@ public class DashboardActivity extends AppCompatActivity implements BottomNaviga
         bottomNavigationView = findViewById(R.id.bottom_navigation);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
+
+//        bundle = getIntent().getExtras();
+//        if(bundle != null){
+//            isFromFavorite = bundle.getBoolean("isFromFavorite");
+//        }
 
         if (isFromFavorite) {
             bottomNavigationView.setSelectedItemId(R.id.menu_favorite);
