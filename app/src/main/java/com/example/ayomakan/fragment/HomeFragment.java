@@ -8,9 +8,14 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.error.ANError;
@@ -35,6 +40,8 @@ public class HomeFragment extends Fragment {
     RecyclerView recyclerView;
     RestaurantAdapter adapter;
     ArrayList<RestaurantModel> restaurantlist;
+    EditText etSearch;
+    String API = "https://restaurant-api.dicoding.dev/list";
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -88,19 +95,46 @@ public class HomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         recyclerView = view.findViewById(R.id.dashboard_rv);
+        etSearch = view.findViewById(R.id.dashboard_search_btn);
+
+        System.out.println("ASDASDASDASD"+ etSearch.getText().toString());
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
 
         restaurantlist = new ArrayList<>();
 
-        getData();
 
+        etSearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                Log.d("KAS", String.valueOf(s));
+                restaurantlist.clear();
+                API = "https://restaurant-api.dicoding.dev/search?q=".concat(String.valueOf(s));
+//                getData();
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (API != API){
+                    API = "https://restaurant-api.dicoding.dev/list";
+                    restaurantlist.clear();
+                }
+                getData();
+            }
+        });
+
+        getData();
         adapter = new RestaurantAdapter(restaurantlist, getActivity());
         recyclerView.setAdapter(adapter);
     }
 
     private void getData() {
-        AndroidNetworking.get("https://restaurant-api.dicoding.dev/list")
+        AndroidNetworking.get(API)
                 .build()
                 .getAsJSONObject(new JSONObjectRequestListener() {
                     @Override

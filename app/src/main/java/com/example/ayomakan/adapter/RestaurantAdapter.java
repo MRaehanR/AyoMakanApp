@@ -39,7 +39,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
     @Override
     public void onBindViewHolder(@NonNull RestaurantAdapter.RestaurantViewHolder holder, int position) {
         holder.tvName.setText(restaurantModels.get(position).getName());
-        holder.tvDescription.setText(restaurantModels.get(position).getDescription());
+        holder.tvDescription.setText(restaurantModels.get(position).getDescription().substring(0, 80) + "...");
         Glide.with(context)
                 .load(restaurantModels.get(position).getPictureId())
                 .into(holder.ivPicture);
@@ -62,7 +62,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
 
     public class RestaurantViewHolder extends RecyclerView.ViewHolder {
 
-        TextView tvName, tvDescription;
+        TextView tvName, tvDescription, tvRating;
         ImageView ivPicture;
         CardView cvRestaurant;
 
@@ -73,6 +73,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
             tvDescription = itemView.findViewById(R.id.list_deskripsi_txt);
             ivPicture = itemView.findViewById(R.id.list_poster);
             cvRestaurant = itemView.findViewById(R.id.cv_resto);
+            tvRating = itemView.findViewById(R.id.list_rating_text);
 
         }
     }

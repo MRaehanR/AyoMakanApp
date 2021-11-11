@@ -2,6 +2,7 @@ package com.example.ayomakan.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -51,7 +52,7 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.Favori
     @Override
     public void onBindViewHolder(@NonNull @NotNull FavoriteAdapter.FavoriteViewHolder holder, int position) {
         holder.tvName.setText(restaurantModels.get(position).getName());
-        holder.tvDescription.setText(restaurantModels.get(position).getDescription());
+        holder.tvDescription.setText(restaurantModels.get(position).getDescription().substring(0, 80) + "...");
         Glide.with(context)
                 .load(restaurantModels.get(position).getPictureId())
                 .into(holder.ivPicture);
@@ -87,6 +88,8 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.Favori
             tvDescription = itemView.findViewById(R.id.list_deskripsi_txt);
             ivPicture = itemView.findViewById(R.id.list_poster);
             cvRestaurant = itemView.findViewById(R.id.cv_resto);
+
+            cvRestaurant.setOnCreateContextMenuListener(this);
 
             RealmConfiguration configuration = new RealmConfiguration.Builder().build();
             realm = Realm.getInstance(configuration);
