@@ -10,7 +10,11 @@ public class RestaurantModel extends RealmObject {
     private String pictureId;
     private String city;
     private double rating;
+    private String username;
 
+    public RestaurantModel(String username) {
+        this.username = username;
+    }
 
     public RestaurantModel(){}
 
