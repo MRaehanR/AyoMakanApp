@@ -4,11 +4,15 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/muhammad samy syafta/AndroidStudioProjects/AyoMakanApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.24444444444444444" />
+        <entry key="..\:/Users/muhammad samy syafta/AndroidStudioProjects/AyoMakanApp/app/src/main/res/drawable/detail_back_btn.xml" value="0.22407407407407406" />
+        <entry key="..\:/Users/muhammad samy syafta/AndroidStudioProjects/AyoMakanApp/app/src/main/res/drawable/detail_shape.xml" value="0.22407407407407406" />
         <entry key="..\:/Users/muhammad samy syafta/AndroidStudioProjects/AyoMakanApp/app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.19166666666666668" />
         <entry key="..\:/Users/muhammad samy syafta/AndroidStudioProjects/AyoMakanApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.24444444444444444" />
+        <entry key="..\:/Users/muhammad samy syafta/AndroidStudioProjects/AyoMakanApp/app/src/main/res/drawable/list_shape.xml" value="0.22407407407407406" />
         <entry key="..\:/Users/muhammad samy syafta/AndroidStudioProjects/AyoMakanApp/app/src/main/res/drawable/shape.xml" value="0.22962962962962963" />
         <entry key="..\:/Users/muhammad samy syafta/AndroidStudioProjects/AyoMakanApp/app/src/main/res/layout/activity_dashboard.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/muhammad samy syafta/AndroidStudioProjects/AyoMakanApp/app/src/main/res/layout/activity_detail.xml" value="0.264" />
+        <entry key="..\:/Users/muhammad samy syafta/AndroidStudioProjects/AyoMakanApp/app/src/main/res/layout/activity_edit_profile.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/muhammad samy syafta/AndroidStudioProjects/AyoMakanApp/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/Users/muhammad samy syafta/AndroidStudioProjects/AyoMakanApp/app/src/main/res/layout/activity_profile.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/muhammad samy syafta/AndroidStudioProjects/AyoMakanApp/app/src/main/res/layout/activity_splashscreen.xml" value="0.264" />

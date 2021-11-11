@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.EditProfile">
+
+    <LinearLayout
+        android:id="@+id/editProfile_layout_1"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:background="@drawable/profile_shape">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/editProfile_username_logo"
+                android:layout_width="150dp"
+                android:layout_height="153dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50dp"
+                android:src="@drawable/ic_launcher_background" />
+
+            <ImageButton
+                android:id="@+id/editProfile_back_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="90dp"
+                android:layout_toLeftOf="@+id/editProfile_username_logo"
+                android:background="#EB3B5A"
+                android:src="@drawable/detail_back_btn" />
+
+            <ImageButton
+                android:id="@+id/editProfile_camera_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/editProfile_username_logo"
+                android:layout_toEndOf="@+id/editProfile_username_logo"
+                android:background="#EB3B5A"
+                android:src="@drawable/editprofile_camera_logo" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textField"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/editProfile_username_logo"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50dp"
+                android:hint="Username"
+                android:textColorHint="@color/white"
+                app:boxBackgroundColor="#EB3B5A"
+                app:boxStrokeColor="@color/white"
+                app:startIconDrawable="@drawable/editprofile_user_logo"
+                app:startIconTint="@color/white"
+                app:hintTextColor="@color/white">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editProfile_Username_editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+        <Button
+            android:id="@+id/editProfile_save_btn"
+            android:layout_width="217dp"
+            android:layout_height="60dp"
+            android:layout_below="@+id/editProfile_layout_1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="100dp"
+            android:backgroundTint="#fed330"
+            android:text="Save Profile"
+            android:textColor="@color/white" />
+
+
+
+
+</RelativeLayout>

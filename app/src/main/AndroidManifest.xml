@@ -10,20 +10,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AyoMakan">
         <activity
-            android:name=".activity.Profile"
-            android:exported="true" />
-        <activity
-            android:name=".activity.DetailActivity"
-            android:exported="true" />
-        <activity android:name=".activity.LoginActivity" />
-        <activity android:name=".activity.DashboardActivity"/>
-        <activity android:name=".activity.SplashScreenActivity">
+            android:name=".activity.EditProfile"
+            android:exported="true" >
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+        <activity
+            android:name=".activity.Profile"
+            android:exported="true" />
+        <activity
+            android:name=".activity.DetailActivity"
+            android:exported="true" />
+        <activity android:name=".activity.LoginActivity" />
+        <activity android:name=".activity.DashboardActivity" />
+        <activity android:name=".activity.SplashScreenActivity">
 
         </activity>
 
