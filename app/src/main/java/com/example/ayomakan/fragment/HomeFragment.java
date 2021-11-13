@@ -103,6 +103,8 @@ public class HomeFragment extends Fragment {
 
         restaurantlist = new ArrayList<>();
 
+        getData();
+
 
         etSearch.addTextChangedListener(new TextWatcher() {
             @Override
@@ -113,27 +115,24 @@ public class HomeFragment extends Fragment {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 Log.d("KAS", String.valueOf(s));
-                restaurantlist.clear();
+//                restaurantlist.clear();
                 API = "https://restaurant-api.dicoding.dev/search?q=".concat(String.valueOf(s));
 //                getData();
             }
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (API != API){
-                    API = "https://restaurant-api.dicoding.dev/list";
+                if (API == "https://restaurant-api.dicoding.dev/search?q="){
                     restaurantlist.clear();
+                    API = "https://restaurant-api.dicoding.dev/list";
                 }
                 getData();
             }
         });
-
-        getData();
-        adapter = new RestaurantAdapter(restaurantlist, getActivity());
-        recyclerView.setAdapter(adapter);
     }
 
     private void getData() {
+        restaurantlist.clear();
         AndroidNetworking.get(API)
                 .build()
                 .getAsJSONObject(new JSONObjectRequestListener() {
@@ -152,6 +151,8 @@ public class HomeFragment extends Fragment {
                                 double rating = resultObj.getDouble("rating");
 
                                 restaurantlist.add(new RestaurantModel(id, name, description, pictureId, city, rating));
+                                adapter = new RestaurantAdapter(restaurantlist, getActivity());
+                                recyclerView.setAdapter(adapter);
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
