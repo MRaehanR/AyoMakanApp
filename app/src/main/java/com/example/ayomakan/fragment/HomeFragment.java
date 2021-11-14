@@ -132,13 +132,13 @@ public class HomeFragment extends Fragment {
     }
 
     private void getData() {
-        restaurantlist.clear();
         AndroidNetworking.get(API)
                 .build()
                 .getAsJSONObject(new JSONObjectRequestListener() {
                     @Override
                     public void onResponse(JSONObject response) {
                         try {
+                            restaurantlist.clear();
                             JSONArray result = response.getJSONArray("restaurants");
                             for (int i = 0; i < result.length(); i++) {
                                 JSONObject resultObj = result.getJSONObject(i);
