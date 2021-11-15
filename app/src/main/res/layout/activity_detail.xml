@@ -76,17 +76,17 @@
         android:layout_marginLeft="60dp"
         android:layout_marginTop="30dp"
         />
-    <TextView
-        android:id="@+id/detail_alamat_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Alamat"
-        android:textSize="14dp"
-        android:textStyle="bold"
-        android:layout_below="@+id/detail_alamatJudul_txt"
-        android:layout_marginLeft="60dp"
-        android:layout_marginTop="10dp"
-        />
+
+        <TextView
+            android:id="@+id/detail_alamat_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/detail_alamatJudul_txt"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="10dp"
+            android:text="Alamat"
+            android:textSize="14dp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/detail_ratingJudul_txt"
@@ -124,34 +124,34 @@
             android:layout_marginRight="50dp"
             android:background="@color/white"
             android:src="@drawable/detail_fav_logo" />
-    <TextView
-        android:id="@+id/detail_deskripsiJudul_txt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Deskripsi"
-        android:textSize="12dp"
-        android:textStyle="bold"
-        android:layout_below="@+id/detail_alamat_txt"
-        android:layout_marginTop="40dp"
-        android:paddingLeft="70dp"
-        />
 
-    <TextView
-        android:id="@+id/detail_deskripsi_txt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/detail_deskripsiJudul_txt"
-        android:layout_marginTop="20dp"
-        android:paddingLeft="70dp"
-        android:text="Deskripsi"
-        android:textColor="#aeb5b0"
-        android:textSize="14dp" />
+        <TextView
+            android:id="@+id/detail_deskripsiJudul_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/detail_alamat_txt"
+            android:layout_marginTop="40dp"
+            android:paddingLeft="60dp"
+            android:text="Deskripsi"
+            android:textSize="12dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/detail_deskripsi_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/detail_deskripsiJudul_txt"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="60dp"
+            android:text="Deskripsi"
+            android:textColor="#aeb5b0"
+            android:textSize="14dp" />
 
         <Button
             android:id="@+id/detail_tulis_komentar_btn"
             android:layout_width="370dp"
             android:layout_height="50dp"
-            android:layout_below="@+id/detail_deskripsi_txt"
+            android:layout_below="@+id/detail_nested2"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
@@ -160,11 +160,37 @@
             android:outlineAmbientShadowColor="@color/black"
             android:outlineSpotShadowColor="@color/black"
             android:shadowColor="@color/black" />
+        <TextView
+            android:id="@+id/detail_menu_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Menu"
+            android:textSize="12dp"
+            android:textStyle="bold"
+            android:layout_below="@+id/detail_deskripsi_txt"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="60dp"
+            />
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/detail_nested2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_below="@+id/detail_menu_txt">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/detail_rv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </androidx.core.widget.NestedScrollView>
 
 
 
     </RelativeLayout>
-
 
 
 
