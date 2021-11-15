@@ -31,7 +31,7 @@ public class RealmHelper {
         });
     }
 
-    public List<RestaurantModel> getAllMovies() {
+    public List<RestaurantModel> getAllRestaurant() {
         RealmResults<RestaurantModel> results = realm.where(RestaurantModel.class).findAll();
         return results;
     }
@@ -59,11 +59,11 @@ public class RealmHelper {
 //        });
 //    }
 
-    public void delete(String name){
+    public void delete(String id){
         realm.executeTransaction(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
-                final RealmResults<RestaurantModel> model = realm.where(RestaurantModel.class).equalTo("name", name).findAll();
+                final RealmResults<RestaurantModel> model = realm.where(RestaurantModel.class).equalTo("id", id).findAll();
                 Log.d("Model dari Delete", String.valueOf(model));
                 model.deleteFirstFromRealm();
             }
