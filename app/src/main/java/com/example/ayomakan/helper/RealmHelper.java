@@ -3,6 +3,7 @@ package com.example.ayomakan.helper;
 import android.util.Log;
 
 import com.example.ayomakan.model.RestaurantModel;
+import com.example.ayomakan.model.UserModel;
 
 import java.util.List;
 
@@ -31,8 +32,27 @@ public class RealmHelper {
         });
     }
 
+    public void saveProfile(UserModel userModel) {
+        realm.executeTransactionAsync(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                if (realm != null) {
+                    Log.e("Created", "Database was created");
+                    UserModel model = realm.copyToRealm(userModel);
+                } else {
+                    Log.e("Failed", "execute: Database not Exist");
+                }
+            }
+        });
+    }
+
     public List<RestaurantModel> getAllRestaurant() {
         RealmResults<RestaurantModel> results = realm.where(RestaurantModel.class).findAll();
+        return results;
+    }
+
+    public List<UserModel> getUser() {
+        RealmResults<UserModel> results = realm.where(UserModel.class).findAll();
         return results;
     }
 
@@ -45,6 +65,16 @@ public class RealmHelper {
             restaurantModel.setDescription(description);
             restaurantModel.setCity(city);
             
+        });
+    }
+
+    public void updateProfile(final String username, final String newUsername){
+        realm.executeTransaction(realm1 -> {
+            UserModel userModel = realm.where(UserModel.class)
+                    .equalTo("username", username)
+                    .findFirst();
+            userModel.setUsername(newUsername);
+
         });
     }
 

@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AyoMakan">
         <activity
-            android:name=".activity.EditProfile"
+            android:name=".activity.EditProfileActivity"
             android:exported="true" />
         <activity
             android:name=".activity.Profile"

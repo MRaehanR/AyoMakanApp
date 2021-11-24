@@ -14,11 +14,18 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.androidnetworking.AndroidNetworking;
+import com.androidnetworking.error.ANError;
+import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.bumptech.glide.Glide;
 import com.example.ayomakan.R;
 import com.example.ayomakan.fragment.HomeFragment;
 import com.example.ayomakan.helper.RealmHelper;
 import com.example.ayomakan.model.RestaurantModel;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -27,7 +34,7 @@ import io.realm.RealmConfiguration;
 
 public class DetailActivity extends AppCompatActivity {
 
-    String id, name, description, pictureId, city;
+    String id, name, description, pictureId, city, address;
     Double rating;
     ImageView ivPicture;
     TextView tvName, tvDescription, tvAlamat, tvRating;
@@ -35,6 +42,7 @@ public class DetailActivity extends AppCompatActivity {
     ImageButton ibBack, ibFavorite;
     Realm realm;
     RealmHelper realmHelper;
+    String API;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -67,6 +75,10 @@ public class DetailActivity extends AppCompatActivity {
             rating = bundle.getDouble("rating");
         }
 
+        API = "https://restaurant-api.dicoding.dev/detail/".concat(id);
+
+        getData();
+
         AtomicReference<RestaurantModel> model = new AtomicReference<>(realm.where(RestaurantModel.class).equalTo("name", name).findFirst());
         Log.d("TAG", String.valueOf(model));
         if(model.get() == null){
@@ -77,7 +89,6 @@ public class DetailActivity extends AppCompatActivity {
 
         tvName.setText(name);
         tvDescription.setText(description);
-        tvAlamat.setText(city);
         tvRating.setText(rating.toString());
         Glide.with(getApplicationContext())
                 .load(pictureId)
@@ -101,5 +112,31 @@ public class DetailActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "remove from your favorite", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    private void getData() {
+        AndroidNetworking.get(API)
+                .build()
+                .getAsJSONObject(new JSONObjectRequestListener() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            JSONObject result = response.getJSONObject("restaurant");
+
+                            address = result.getString("address");
+                            tvAlamat.setText(address);
+                            
+                            Log.d("BOC", address);
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                    @Override
+                    public void onError(ANError anError) {
+                        anError.printStackTrace();
+                    }
+                });
     }
 }
