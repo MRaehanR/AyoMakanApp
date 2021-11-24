@@ -51,6 +51,8 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.Favori
 
     @Override
     public void onBindViewHolder(@NonNull @NotNull FavoriteAdapter.FavoriteViewHolder holder, int position) {
+        Double rating = restaurantModels.get(position).getRating();
+        holder.tvRating.setText(rating.toString());
         holder.tvName.setText(restaurantModels.get(position).getName());
         holder.tvDescription.setText(restaurantModels.get(position).getDescription().substring(0, 80) + "...");
         Glide.with(context)
@@ -77,7 +79,7 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.Favori
     public class FavoriteViewHolder extends RecyclerView.ViewHolder implements View.OnCreateContextMenuListener, MenuItem.OnMenuItemClickListener{
 
         String positionItem;
-        TextView tvName, tvDescription;
+        TextView tvName, tvDescription, tvRating;
         ImageView ivPicture;
         CardView cvRestaurant;
 
@@ -88,6 +90,7 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.Favori
             tvDescription = itemView.findViewById(R.id.list_deskripsi_txt);
             ivPicture = itemView.findViewById(R.id.list_poster);
             cvRestaurant = itemView.findViewById(R.id.cv_resto);
+            tvRating = itemView.findViewById(R.id.list_rating_text);
 
             cvRestaurant.setOnCreateContextMenuListener(this);
 

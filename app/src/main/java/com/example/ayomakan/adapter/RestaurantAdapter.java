@@ -38,6 +38,8 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
 
     @Override
     public void onBindViewHolder(@NonNull RestaurantAdapter.RestaurantViewHolder holder, int position) {
+        Double rating = restaurantModels.get(position).getRating();
+        holder.tvRating.setText(rating.toString());
         holder.tvName.setText(restaurantModels.get(position).getName());
         holder.tvDescription.setText(restaurantModels.get(position).getDescription().substring(0, 80) + "...");
         Glide.with(context)

@@ -1,18 +1,31 @@
 package com.example.ayomakan.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.ayomakan.R;
+import com.example.ayomakan.activity.EditProfileActivity;
+import com.example.ayomakan.helper.RealmHelper;
+import com.example.ayomakan.model.RestaurantModel;
+import com.example.ayomakan.model.UserModel;
 
 import org.jetbrains.annotations.NotNull;
+
+import java.util.List;
+
+import io.realm.Realm;
+import io.realm.RealmConfiguration;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -21,7 +34,12 @@ import org.jetbrains.annotations.NotNull;
  */
 public class ProfileFragment extends Fragment {
 
+    Button btn_editProfile;
+    TextView tvUsername;
     Bundle bundle;
+    List<UserModel> userModels;
+    Realm realm;
+    RealmHelper realmHelper;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -74,6 +92,28 @@ public class ProfileFragment extends Fragment {
     public void onViewCreated(@NonNull @NotNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        btn_editProfile = view.findViewById(R.id.profile_editProfile_btn);
+        tvUsername = view.findViewById(R.id.profile_username);
 
+        Realm.init(getContext());
+        RealmConfiguration configuration = new RealmConfiguration.Builder().allowWritesOnUiThread(true).build();
+        realm = Realm.getInstance(configuration);
+        realmHelper = new RealmHelper(realm);
+
+        Log.d("UWU", String.valueOf(realmHelper.getUser()));
+
+        if (realmHelper.getUser() != null){
+            tvUsername.setText(realmHelper.getUser().get(0).getUsername());
+        }
+
+
+
+        btn_editProfile.setOnClickListener(v -> {
+            Intent intent = new Intent(getContext(), EditProfileActivity.class);
+            intent.putExtra("username", tvUsername.getText());
+            startActivity(intent);
+        });
     }
+
+
 }
