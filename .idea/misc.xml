@@ -8,17 +8,19 @@
         <entry key="..\:/Users/muhammad samy syafta/AndroidStudioProjects/AyoMakanApp/app/src/main/res/drawable/detail_shape.xml" value="0.22407407407407406" />
         <entry key="..\:/Users/muhammad samy syafta/AndroidStudioProjects/AyoMakanApp/app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.19166666666666668" />
         <entry key="..\:/Users/muhammad samy syafta/AndroidStudioProjects/AyoMakanApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.24444444444444444" />
+        <entry key="..\:/Users/muhammad samy syafta/AndroidStudioProjects/AyoMakanApp/app/src/main/res/drawable/imageview_shape.xml" value="0.18981481481481483" />
+        <entry key="..\:/Users/muhammad samy syafta/AndroidStudioProjects/AyoMakanApp/app/src/main/res/drawable/imageview_shape_layerlist.xml" value="0.18981481481481483" />
         <entry key="..\:/Users/muhammad samy syafta/AndroidStudioProjects/AyoMakanApp/app/src/main/res/drawable/list_shape.xml" value="0.22407407407407406" />
         <entry key="..\:/Users/muhammad samy syafta/AndroidStudioProjects/AyoMakanApp/app/src/main/res/drawable/shape.xml" value="0.22962962962962963" />
         <entry key="..\:/Users/muhammad samy syafta/AndroidStudioProjects/AyoMakanApp/app/src/main/res/layout/activity_dashboard.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/muhammad samy syafta/AndroidStudioProjects/AyoMakanApp/app/src/main/res/layout/activity_detail.xml" value="0.264" />
-        <entry key="..\:/Users/muhammad samy syafta/AndroidStudioProjects/AyoMakanApp/app/src/main/res/layout/activity_edit_profile.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/muhammad samy syafta/AndroidStudioProjects/AyoMakanApp/app/src/main/res/layout/activity_edit_profile.xml" value="0.264" />
         <entry key="..\:/Users/muhammad samy syafta/AndroidStudioProjects/AyoMakanApp/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/Users/muhammad samy syafta/AndroidStudioProjects/AyoMakanApp/app/src/main/res/layout/activity_profile.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/muhammad samy syafta/AndroidStudioProjects/AyoMakanApp/app/src/main/res/layout/activity_splashscreen.xml" value="0.264" />
         <entry key="..\:/Users/muhammad samy syafta/AndroidStudioProjects/AyoMakanApp/app/src/main/res/layout/fragment_favorite.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/muhammad samy syafta/AndroidStudioProjects/AyoMakanApp/app/src/main/res/layout/fragment_home.xml" value="0.24818840579710144" />
-        <entry key="..\:/Users/muhammad samy syafta/AndroidStudioProjects/AyoMakanApp/app/src/main/res/layout/fragment_profile.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/muhammad samy syafta/AndroidStudioProjects/AyoMakanApp/app/src/main/res/layout/fragment_profile.xml" value="0.2" />
         <entry key="..\:/Users/muhammad samy syafta/AndroidStudioProjects/AyoMakanApp/app/src/main/res/layout/resto_list.xml" value="0.264" />
         <entry key="..\:/Users/muhammad samy syafta/AndroidStudioProjects/AyoMakanApp/app/src/main/res/layout/shape.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/muhammad samy syafta/AndroidStudioProjects/AyoMakanApp/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.25416666666666665" />

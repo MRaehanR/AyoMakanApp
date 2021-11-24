@@ -16,13 +16,37 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <ImageView
-                android:id="@+id/editProfile_username_logo"
-                android:layout_width="150dp"
-                android:layout_height="153dp"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="50dp"
-                android:src="@drawable/ic_launcher_background" />
+            <RelativeLayout
+                android:id="@+id/editprofile_layout_2"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true">
+
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:id="@+id/editprofile_user_logo"
+                    android:layout_width="160dp"
+                    android:layout_height="153dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="4dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/user_logo"
+                    app:civ_border_color="@android:color/white"
+                    app:civ_border_width="3dp" />
+
+                <ImageButton
+                    android:id="@+id/editprofile_editFoto_logo"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    android:layout_alignBottom="@id/editprofile_user_logo"
+                    android:layout_alignParentRight="true"
+                    android:background="#00FFFFFF"
+                    android:src="@drawable/editprofile_camera_logo"
+                    app:civ_shadow="true"
+                    app:civ_shadow_radius="1dp" />
+
+            </RelativeLayout>
 
             <ImageButton
                 android:id="@+id/editProfile_back_btn"
@@ -30,26 +54,18 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="90dp"
-                android:layout_toLeftOf="@+id/editProfile_username_logo"
+                android:layout_toLeftOf="@+id/editprofile_layout_2"
                 android:background="#EB3B5A"
-                android:src="@drawable/detail_back_btn" />
-
-            <ImageButton
-                android:id="@+id/editProfile_camera_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/editProfile_username_logo"
-                android:layout_toEndOf="@+id/editProfile_username_logo"
-                android:background="#EB3B5A"
-                android:src="@drawable/editprofile_camera_logo" />
+                android:src="@drawable/detail_back_btn"
+                tools:ignore="NotSibling" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textField"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/editProfile_username_logo"
+                android:layout_below="@+id/editprofile_layout_2"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="30dp"
                 android:hint="Username"
                 android:textColorHint="@color/white"
                 app:boxBackgroundColor="#EB3B5A"
@@ -70,18 +86,16 @@
         </RelativeLayout>
     </LinearLayout>
 
-        <Button
-            android:id="@+id/editProfile_save_btn"
-            android:layout_width="217dp"
-            android:layout_height="60dp"
-            android:layout_below="@+id/editProfile_layout_1"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="100dp"
-            android:backgroundTint="#fed330"
-            android:text="Save Profile"
-            android:textColor="@color/white" />
-
-
+    <Button
+        android:id="@+id/editProfile_save_btn"
+        android:layout_width="217dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/editProfile_layout_1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:backgroundTint="#fed330"
+        android:text="Save Profile"
+        android:textColor="@color/white" />
 
 
 </RelativeLayout>

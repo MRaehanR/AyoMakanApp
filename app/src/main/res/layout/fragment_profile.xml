@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.ProfileFragment">
 
     <RelativeLayout
@@ -20,13 +21,25 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <ImageView
+<!--                <ImageView-->
+<!--                    android:id="@+id/profile_username_logo"-->
+<!--                    android:layout_width="150dp"-->
+<!--                    android:layout_height="153dp"-->
+<!--                    android:layout_centerHorizontal="true"-->
+<!--                    android:layout_marginTop="50dp"-->
+<!--                    android:src="@drawable/user_logo" />-->
+                <com.mikhaellopez.circularimageview.CircularImageView
                     android:id="@+id/profile_username_logo"
-                    android:layout_width="150dp"
+                    android:layout_width="160dp"
                     android:layout_height="153dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="50dp"
-                    android:src="@drawable/ic_launcher_background" />
+                    android:layout_marginLeft="4dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/user_logo"
+                    app:civ_border_color="@android:color/white"
+                    app:civ_border_width="3dp" />
 
                 <TextView
                     android:id="@+id/profile_username"
