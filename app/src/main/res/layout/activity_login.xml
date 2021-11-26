@@ -112,15 +112,35 @@
         android:textSize="17dp"
         android:textStyle="bold"/>
 
-    <ImageButton
-        android:id="@+id/login_google_btn"
+    <RelativeLayout
+        android:id="@+id/Login_google_layout"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_below="@+id/login_opsiMasuk_txt"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:backgroundTint="@color/white"
-        android:src="@drawable/login_google_logo" />
+        android:layout_marginTop="30dp">
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/google_sign_in_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/white"
+            android:background="@color/white"
+            android:layout_centerInParent="true"
+
+            />
+
+        <ImageView
+            android:id="@+id/login_google_btn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/login_google_logo" />
+
+    </RelativeLayout>
+
+
+
+
+
     <ImageButton
         android:id="@+id/login_facebook_btn"
         android:layout_width="50dp"
@@ -128,7 +148,7 @@
         android:src="@drawable/login_facebook_logo"
         android:backgroundTint="@color/white"
         android:layout_below="@+id/login_opsiMasuk_txt"
-        android:layout_toEndOf="@+id/login_google_btn"
+        android:layout_toEndOf="@+id/Login_google_layout"
         android:layout_marginTop="30dp"
         android:layout_marginLeft="10dp"
         />
@@ -139,7 +159,7 @@
         android:backgroundTint="@color/white"
         android:layout_below="@+id/login_opsiMasuk_txt"
         android:layout_marginTop="30dp"
-        android:layout_toLeftOf="@+id/login_google_btn"
+        android:layout_toLeftOf="@+id/Login_google_layout"
         android:layout_marginRight="10dp"
         />
 
