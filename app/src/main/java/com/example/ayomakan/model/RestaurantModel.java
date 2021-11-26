@@ -1,5 +1,6 @@
 package com.example.ayomakan.model;
 
+import io.realm.RealmList;
 import io.realm.RealmObject;
 
 public class RestaurantModel extends RealmObject {
@@ -9,7 +10,20 @@ public class RestaurantModel extends RealmObject {
     private String description;
     private String pictureId;
     private String city;
+    RealmList<String> categories, foods, drinks;
     private double rating;
+
+    public RestaurantModel(String id, String name, String description, String pictureId, String city, RealmList<String> categories, RealmList<String> foods, RealmList<String> drinks, double rating) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.pictureId = pictureId;
+        this.city = city;
+        this.categories = categories;
+        this.foods = foods;
+        this.drinks = drinks;
+        this.rating = rating;
+    }
 
     public RestaurantModel(){}
 

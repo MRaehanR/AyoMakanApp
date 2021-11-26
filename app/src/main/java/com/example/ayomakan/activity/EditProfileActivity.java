@@ -45,7 +45,7 @@ public class EditProfileActivity extends AppCompatActivity {
         btn_back = findViewById(R.id.editProfile_back_btn);
         etUsername = findViewById(R.id.editProfile_Username_editText);
         btn_save = findViewById(R.id.editProfile_save_btn);
-        iv_image = findViewById(R.id.editProfile_username_logo);
+        iv_image = findViewById(R.id.editprofile_editFoto_logo);
 
         iv_image.setClickable(true);
 

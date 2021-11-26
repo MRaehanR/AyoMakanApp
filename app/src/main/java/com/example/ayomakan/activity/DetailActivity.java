@@ -2,6 +2,9 @@ package com.example.ayomakan.activity;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.content.res.ColorStateList;
@@ -19,6 +22,7 @@ import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.bumptech.glide.Glide;
 import com.example.ayomakan.R;
+import com.example.ayomakan.adapter.MenuAdapter;
 import com.example.ayomakan.fragment.HomeFragment;
 import com.example.ayomakan.helper.RealmHelper;
 import com.example.ayomakan.model.RestaurantModel;
@@ -31,6 +35,7 @@ import java.util.concurrent.atomic.AtomicReference;
 
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
+import io.realm.RealmList;
 
 public class DetailActivity extends AppCompatActivity {
 
@@ -43,6 +48,8 @@ public class DetailActivity extends AppCompatActivity {
     Realm realm;
     RealmHelper realmHelper;
     String API;
+    MenuAdapter menuAdapter;
+    RecyclerView rv_menu;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -59,6 +66,7 @@ public class DetailActivity extends AppCompatActivity {
         ivPicture = findViewById(R.id.detail_detailImage);
         ibBack = findViewById(R.id.detail_back_btn);
         ibFavorite = findViewById(R.id.detail_fav_btn);
+        rv_menu = findViewById(R.id.detail_rv);
 
         Realm.init(this);
         RealmConfiguration configuration = new RealmConfiguration.Builder().allowWritesOnUiThread(true).build();
@@ -75,7 +83,7 @@ public class DetailActivity extends AppCompatActivity {
             rating = bundle.getDouble("rating");
         }
 
-        API = "https://restaurant-api.dicoding.dev/detail/".concat(id);
+        API = "https://restaurant-api.dicoding.dev/detail/"+id;
 
         getData();
 
@@ -122,6 +130,31 @@ public class DetailActivity extends AppCompatActivity {
                     public void onResponse(JSONObject response) {
                         try {
                             JSONObject result = response.getJSONObject("restaurant");
+                            JSONObject menus = result.getJSONObject("menus");
+                            JSONArray foods = menus.getJSONArray("foods");
+                            JSONArray drinks = menus.getJSONArray("drinks");
+
+                            Log.d("GUE", String.valueOf(foods));
+
+                            RealmList<String> foodsString = new RealmList<>();
+                            RealmList<String> drinksString = new RealmList<>();
+
+                            for (int i = 0; i < foods.length(); i++) {
+                                JSONObject object = foods.getJSONObject(i);
+                                String name = object.getString("name");
+                                foodsString.add(name);
+                            }
+
+                            for (int i = 0; i < drinks.length(); i++) {
+                                JSONObject object = drinks.getJSONObject(i);
+                                String name = object.getString("name");
+                                foodsString.add(name);
+                            }
+
+                            menuAdapter = new MenuAdapter(foodsString);
+                            RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getApplicationContext(), 2);
+                            rv_menu.setLayoutManager(layoutManager);
+                            rv_menu.setAdapter(menuAdapter);
 
                             address = result.getString("address");
                             tvAlamat.setText(address);

@@ -100,13 +100,14 @@ public class ProfileFragment extends Fragment {
         realm = Realm.getInstance(configuration);
         realmHelper = new RealmHelper(realm);
 
+        UserModel userModel = new UserModel("USERNAME");
+        realmHelper.saveProfile(userModel);
+
         Log.d("UWU", String.valueOf(realmHelper.getUser()));
 
         if (realmHelper.getUser() != null){
             tvUsername.setText(realmHelper.getUser().get(0).getUsername());
         }
-
-
 
         btn_editProfile.setOnClickListener(v -> {
             Intent intent = new Intent(getContext(), EditProfileActivity.class);
