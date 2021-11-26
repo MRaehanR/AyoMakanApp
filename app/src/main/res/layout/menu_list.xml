@@ -8,6 +8,7 @@
     android:outlineSpotShadowColor="@color/black"
     android:outlineAmbientShadowColor="@color/black"
     app:cardCornerRadius="20dp"
+
     >
 
     <RelativeLayout
