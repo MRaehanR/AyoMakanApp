@@ -32,7 +32,7 @@ public class RealmHelper {
         });
     }
 
-    public void saveProfile(UserModel userModel) {
+    public void saveProfile(final UserModel userModel) {
         realm.executeTransactionAsync(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {

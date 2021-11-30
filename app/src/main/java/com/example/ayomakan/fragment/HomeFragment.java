@@ -22,13 +22,18 @@ import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.example.ayomakan.R;
 import com.example.ayomakan.adapter.RestaurantAdapter;
+import com.example.ayomakan.helper.RealmHelper;
 import com.example.ayomakan.model.RestaurantModel;
+import com.example.ayomakan.model.UserModel;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+
+import io.realm.Realm;
+import io.realm.RealmConfiguration;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -104,6 +109,14 @@ public class HomeFragment extends Fragment {
         restaurantlist = new ArrayList<>();
 
         getData();
+
+        Realm.init(getContext());
+        RealmConfiguration configuration = new RealmConfiguration.Builder().allowWritesOnUiThread(true).build();
+        Realm realm = Realm.getInstance(configuration);
+        RealmHelper realmHelper = new RealmHelper(realm);
+
+        UserModel userModel = new UserModel("USERNAME", null);
+        realmHelper.saveProfile(userModel);
 
 
         etSearch.addTextChangedListener(new TextWatcher() {

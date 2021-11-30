@@ -37,9 +37,9 @@ public class ProfileFragment extends Fragment {
     Button btn_editProfile;
     TextView tvUsername;
     Bundle bundle;
-    List<UserModel> userModels;
     Realm realm;
     RealmHelper realmHelper;
+    UserModel userModel;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -100,14 +100,12 @@ public class ProfileFragment extends Fragment {
         realm = Realm.getInstance(configuration);
         realmHelper = new RealmHelper(realm);
 
-        UserModel userModel = new UserModel("USERNAME");
+        userModel = new UserModel("USERNAME", null);
         realmHelper.saveProfile(userModel);
 
         Log.d("UWU", String.valueOf(realmHelper.getUser()));
 
-        if (realmHelper.getUser() != null){
-            tvUsername.setText(realmHelper.getUser().get(0).getUsername());
-        }
+        tvUsername.setText(realmHelper.getUser().get(0).getUsername());
 
         btn_editProfile.setOnClickListener(v -> {
             Intent intent = new Intent(getContext(), EditProfileActivity.class);
@@ -115,6 +113,8 @@ public class ProfileFragment extends Fragment {
             startActivity(intent);
         });
     }
+
+
 
 
 }

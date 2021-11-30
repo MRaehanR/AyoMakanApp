@@ -78,14 +78,19 @@ public class EditProfileActivity extends AppCompatActivity {
 
             Log.d("LHO", String.valueOf(model.get()));
 
-            if(model.get() == null){
-                realmHelper.saveProfile(userModels);
-                Toast.makeText(getApplicationContext(), "Profile Saved", Toast.LENGTH_SHORT).show();
+            if (etUsername.getText().toString().trim().isEmpty()){
+                Toast.makeText(getApplicationContext(), "Username are required", Toast.LENGTH_SHORT).show();
             } else {
-                realmHelper.updateProfile(username, newUsername);
-                Toast.makeText(getApplicationContext(), "Profile Updated", Toast.LENGTH_SHORT).show();
+                if(model.get() == null){
+                    realmHelper.saveProfile(userModels);
+                    Toast.makeText(getApplicationContext(), "Profile Saved", Toast.LENGTH_SHORT).show();
+                } else {
+                    realmHelper.updateProfile(username, newUsername);
+                    Toast.makeText(getApplicationContext(), "Profile Updated", Toast.LENGTH_SHORT).show();
+                }
+                startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
+                finish();
             }
-            startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
         });
     }
 
@@ -94,5 +99,11 @@ public class EditProfileActivity extends AppCompatActivity {
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
         startActivityForResult(intent, 1000);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
     }
 }
